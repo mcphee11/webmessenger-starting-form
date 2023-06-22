@@ -1,8 +1,8 @@
 'use strict'
 
 //Variables to change in your deployment
-const deploymentId = 'ENTER_YOUR_DEPLOYMENTID'  //Your WebMessenger DeploymentId
-const hexColor = '#000000'  //Color theme
+const deploymentId = 'ENTER_YOUR_DEPLOYMENTID' //Your WebMessenger DeploymentId
+const hexColor = '#000000' //Color theme
 
 function toggleMessenger() {
   Genesys(
@@ -36,7 +36,7 @@ function closeLauncher() {
 }
 
 function openLauncher() {
-  let session = JSON.parse(localStorage.getItem('_1c077c42-7a8e-421b-85b1-3a4ae63f39f9:gcmcsessionActive'))
+  let session = JSON.parse(localStorage.getItem(`_${deploymentId}:gcmcsessionActive`))
   let input = document.getElementById('input')
   console.log(session?.value)
   if (session?.value) {
