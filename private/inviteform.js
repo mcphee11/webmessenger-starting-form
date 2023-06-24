@@ -209,3 +209,27 @@ form.appendChild(submit)
 input.appendChild(form)
 
 document.body.appendChild(input)
+
+//listen to screen sizing for mobile & dynamic pc
+function sizeChanged() {
+  if (window.innerWidth < 600 && screenSize != 'mobile') {
+    screenSize = 'mobile'
+    let input = document.getElementById('input')
+    input.style.width = '100%'
+    input.style.height = '100%'
+    input.style.bottom = 0
+    input.style.right = 0
+  }
+  if (window.innerWidth > 600 && screenSize != 'pc') {
+    screenSize = 'pc'
+    let input = document.getElementById('input')
+    input.style.width = '408px'
+    input.style.height = '648px'
+    input.style.bottom = '30px'
+    input.style.right = '30px'
+  }
+}
+
+let screenSize = ''
+window.addEventListener('resize',sizeChanged)
+sizeChanged()
